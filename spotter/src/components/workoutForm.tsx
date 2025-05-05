@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, TextField, Box, Paper } from '@mui/material';
+import { Button, Input, Box, Paper, FormControl, FormLabel } from '@mui/material';
 
 
 
@@ -24,15 +24,25 @@ const WorkoutForm: React.FC = () => {
     {isOpen && (
         <Paper elevation={3} className="modal">
           <div className="modal-content">
-            <span className="close" onClick={closeForm}>&times;</span>
+            {/* <span className="close" onClick={closeForm}></span> */}
+            <Button onClick={closeForm}>&times;</Button>
             <form>
-              <label htmlFor="name">Name:</label>
-              <input type="text" id="name" name="name" />
 
-              <label htmlFor="email">Email:</label>
-              <input type="email" id="email" name="email" />
+              <FormControl margin="normal">
+                <FormLabel>Workout Name</FormLabel>
+                <Input type="text" placeholder="Workout Name" />
+              </FormControl>
 
-              <button type="submit">Submit</button>
+              <FormControl margin="normal">
+                <FormLabel>Exercise</FormLabel>
+                <Input type="text" placeholder="Workout Type" />
+              </FormControl>
+
+              
+              
+              <Button type="submit">Save</Button>
+
+              
             </form>
           </div>
         </Paper>
